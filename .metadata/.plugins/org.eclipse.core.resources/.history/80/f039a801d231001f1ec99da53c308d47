@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메인 화면</title>
+</head>
+<style>
+	.option{
+		background:pink;
+		width: 200px;
+		height: 200px;
+		margin: 50px;
+		text-align: center;
+		line-height:175px;
+		
+	}
+	.container{
+		justify-content: center;
+	 	display: flex;
+	} 
+</style>
+<body>
+<div class="container">
+	<div class="option"><span class="option_style">의뢰하기</span></div>
+	<div class="option"><span class="option_style">의뢰 목록</span></div>
+</div>
+	
+</body>
+</html>

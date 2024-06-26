@@ -1,0 +1,35 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.example.demo.dao.HomeDao;
+import com.example.demo.dto.RequestDto;
+
+import jakarta.servlet.http.HttpSession;
+
+@Service
+public class HomeService {
+	@Autowired
+    private HomeDao hDao;
+	
+	public String requestWrite_hServ(List<MultipartFile> files, RequestDto request, HttpSession session,
+			RedirectAttributes rttr) {
+		System.out.println("@@@@@requestWrite_hServ()");
+		String view = null;
+        String msg = null;
+        
+        try {
+        	//글 내용 저장.
+        	hDao.insertRequest(request);
+        }catch (Exception e) {
+		
+		}
+		return view;
+	}
+
+}

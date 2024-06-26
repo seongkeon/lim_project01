@@ -1,0 +1,40 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.example.demo.dao.UserDao;
+import com.example.demo.dto.UserDto;
+
+import jakarta.servlet.http.HttpSession;
+
+@Service
+public class UserService {
+
+	@Autowired
+    private UserDao uDao;
+	
+	public String insertUser(UserDto user, RedirectAttributes rttr) {		
+		String view = null;
+        String msg = null;
+		try {
+			System.out.println("@@@@insertUser()");
+            uDao.insertUser(user);             
+            view = "redirect:/login";
+            msg = "가입 성공";
+        } catch (Exception e){
+            e.printStackTrace();
+            msg = "가입 실패";
+        }
+        rttr.addFlashAttribute("msg", msg);
+		return view;
+	}
+
+	public String loginProc(UserDto user, HttpSession session, RedirectAttributes rttr) {
+		String view = null;
+		
+		return null;
+	}
+	
+}

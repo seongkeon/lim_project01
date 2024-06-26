@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>그림 요청</title>
+</head>
+<body>
+	requestform page
+	<form>
+		<input type="hidden" class="reqId" name="reqId" placeholder="reqId"><br>	
+		<input type="text" class="reqClient" name="reqClient" placeholder="reqClient"><br>
+		<input type="text" class="reqTitle" name="reqTitle" placeholder="reqTitle"><br>
+		<input type="radio" class="reqOrder" id="before_pay" name="reqPay" value="before_pay"><label for='before_pay'>선불</label>
+		<input type="radio" class="reqOrder" id="after_pay" name="reqPay" value="after_pay"><label for='after_pay'>후불</label>
+		<br>
+		<input type="text" class="reqPay" name="reqPay" placeholder="reqPay"><br>
+		<textarea name="reqContent" placeholder="reqContent"></textarea>		
+		<input type="text" class="" name="" placeholder=""><br>
+		<input type="text" class="" name="" placeholder=""><br>
+	</form>
+</body>
+</html>
