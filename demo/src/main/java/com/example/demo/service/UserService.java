@@ -8,7 +8,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.example.demo.dao.UserDao;
 import com.example.demo.dto.UserDto;
 
-import ch.qos.logback.core.model.Model;
 import jakarta.servlet.http.HttpSession;
 
 @Service

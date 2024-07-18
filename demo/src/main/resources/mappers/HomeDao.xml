@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.HomeDao">
+	<insert id="insertFile" parameterType="RfileDto">
+		INSERT INTO requestfile
+		VALUES (#{rf_reqId},#{rf_oriname},#{rf_sysname})
+	</insert>
+
+	<insert id="insertRequest" parameterType="RequestDto"
+	useGeneratedKeys="true" keyProperty="reqId">
+		<selectKey keyProperty="reqId"
+                   resultType="Integer"
+                   order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+		INSERT INTO requests
+		VALUES (#{reqId},#{reqClient},#{reqTitle},#{reqPay},#{reqOrder},
+		#{reqContent},#{reqAssigned},#{reqTime})
+	</insert>
+	
+	<select id="selectRequestList" resultType="RequestDto" 
+	parameterType="RequestDto">
+		select * from requests
+	</select>
+	
+	<select id="selectRequest" resultType="RequestDto"
+	parameterType="Integer">
+		select * from requests where reqId=#{reqId} 
+	</select>
+	
+	<select id="selectFile" resultType="RFileDto"
+	parameterType="Integer">
+	select * from requestfile where rf_reqId=#{reqId}
+	</select>
+	
+
+</mapper>

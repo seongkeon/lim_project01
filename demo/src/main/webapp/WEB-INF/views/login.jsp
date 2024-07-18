@@ -7,7 +7,21 @@
 <title>로그인 화면</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
-.header{
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	
+}
+.title{
+
 	text-align:center;
 	margin: 5px;
 }
@@ -31,26 +45,33 @@ input{
 </style>
 </head>
 <body>
-	<header class="header">
-		<div class="header_inner">Login</div>
-	</header>
-	<div class="content">
-		<div class="content_inner">
-			<form action="/login/login_try" method="post">
-				<input type="text" name="userId" class="userId" placeholder="아이디" title="아이디" size=17 required><br> 
-				<input type="password" name="userPw" class="userPw" placeholder="비밀번호" title="비밀번호" size=17 required>
-				<button id="login" type="submit">로그인</button>
-			</form>			
+<header>
+	<jsp:include page="header.jsp"></jsp:include>
+</header>
+<section>
+	<div class="wrap">
+		
+		<div class="title">로그인</div>
+		
+		<div class="content">
+			<div class="content_inner">
+				<form action="/login/login_try" method="post">
+					<input type="text" name="userId" class="userId" placeholder="아이디" title="아이디" size=17 required><br> 
+					<input type="password" name="userPw" class="userPw" placeholder="비밀번호" title="비밀번호" size=17 required>
+					<button id="login" type="submit">로그인</button>
+				</form>			
+			</div>
+			<button id="signup" type="submit">회원가입</button>
 		</div>
-		<button id="signup" type="submit">회원가입</button>
 	</div>
+</section>
+<footer>
+</footer>
 </body>
 <script>
 	$("#signup").click(function(){
 		location.href="/signup"
 	})
-	/* $("#login").click(function(){
-		location.href="/login/login_try"
-	}) */
+	
 </script>
 </html>
