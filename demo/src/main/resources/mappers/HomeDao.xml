@@ -28,10 +28,13 @@
 		select * from requests where reqId=#{reqId} 
 	</select>
 	
-	<select id="selectFile" resultType="RFileDto"
+	<select id="selectFile" resultType="RfileDto"
 	parameterType="Integer">
 	select * from requestfile where rf_reqId=#{reqId}
 	</select>
 	
-
+	<insert id="insertReqContract" parameterType="ReqContractDto">
+		INSERT INTO reqContracts
+		VALUES (default,#{tableId},#{reqId},#{reqConValid},#{reqConTime})
+	</insert>
 </mapper>

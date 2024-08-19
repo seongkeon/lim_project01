@@ -1,3 +1,4 @@
+<%@page import="com.example.demo.dto.UserDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -44,8 +45,12 @@
 		location.href="/main/requestForm";
 		
 	}
-	function requestList(){
-		location.href="/main/requestList";
+	function requestList(id){
+		location.href="/main/requestList?tableId=" + id;
+	}
+	function mypage(id){
+		alert("id = " + id);
+		location.href="/main/myInfo?tableId=" + id;
 	}
 </script>
 <body>
@@ -55,10 +60,13 @@
 <section>
 	<div class="container">
 		<div class="option option_1" onclick="request()"><span class="option_1_style">의뢰하기</span></div>
-		<div class="option option_2" onclick="requestList()"><span class="option_2_style">의뢰 목록</span></div>
+		<div class="option option_2" onclick="requestList(${user.tableId})"><span class="option_2_style">의뢰 목록</span></div>
 	</div>
+	${user.tableId}
 	${user.userId}
 	${user.userName}
+	<div class="mypage" onclick="mypage(${user.tableId})">마이페이지</div>
+	
 </section>
 <footer>
 </footer>

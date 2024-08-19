@@ -15,4 +15,9 @@
 	SELECT * FROM user WHERE userId=#{userId}
 </select>
 
+<select id="getMyInfo" resultType="UserDto" parameterType="String">
+	SELECT * FROM user WHERE tableId=#{tableId}
+</select>
+
+
 </mapper>

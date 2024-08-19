@@ -1,11 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<style>
+	.logo{
+		width: 100px;
+	}
+</style>
 <div class="top-bar">
 	<div class="content">
-		<img alt="로고" src="images/jirungi_logo.jpg" class="logo"
+		<img alt="로고" src="images/jirungi_logo.png" class="logo"
 			onclick="gomain()">
+			
+		<nav class="top-right">
+			<ul class="top-right-list">
+				<li>userId</li>
+				<li>userName</li>
+			</ul>
+		</nav>
 	</div>
 </div>
-
 <script>
 	function gomain(){
 		let id = "${user.tableId}";

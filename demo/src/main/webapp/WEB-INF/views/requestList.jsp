@@ -14,16 +14,34 @@
 		background: gray;
 		color: pink;
 	}
+	.accept_btn{
+		background: skyblue;
+		text-align:center;
+		cursor: pointer;
+	}
 </style>
 <script>
 	function requestDetail(reqId){
 		alert("requestdetail()" + reqId);
 		location.href="/main/requestList/requestDetail?reqId=" + reqId;
 	}
+	
+	function accept(reqId){
+/* 		reqId = parseInt(reqId, 10);
+	    tableId = parseInt(tableId, 10); */
+	    alert("reqId:" + reqId);
+		if(confirm("수락하시겠습니까?")){
+			location.href="/main/requestList/requestAccept?reqId=" + reqId;	
+		}else{
+			return false;
+		}
+		
+	}
 </script>
 <body>
 <table>
 	<colgroup>
+		<col style="">
 		<col style="">
 		<col style="">
 		<col style="">
@@ -41,6 +59,7 @@
 			<th>의뢰인</th>
 			<th>배정</th>
 			<th>시간</th>
+			<th>수락 버튼</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -53,6 +72,7 @@
 				<td>${item.reqClient}</td>
 				<td>${item.reqAssigned}</td>
 				<td>${item.reqTime}</td>
+				<td><div class="accept_btn" onclick="accept(${item.reqId})">수락</div></td>
 			</tr>
 		</c:forEach>
 	</tbody>	

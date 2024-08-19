@@ -12,5 +12,7 @@ public interface UserDao {
 	String selectPass(String userId);
 	//회원 정보를 가져오는 메소드
 	UserDto selectUser(String userId);
+	//내 정보를 가져오는 메소드
+	UserDto getMyInfo(String tableId);
 
 }

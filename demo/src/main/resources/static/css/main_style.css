@@ -1,0 +1,32 @@
+@charset "UTF-8";
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+}
+
+/* top-bar */
+.top-bar{
+	background-color: #80ff80;
+}
+.logo{
+	width:100px;
+	margin: 10px;
+}
+.top-right{
+	margin: 10px;
+	height: 100px;
+	float:right;
+	background-color:olive;
+}
+.top-right-list{
+	list-style:none;
+	background-color: orange;
+}

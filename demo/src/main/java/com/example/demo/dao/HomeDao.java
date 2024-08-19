@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.example.demo.dto.ReqContractDto;
 import com.example.demo.dto.RequestDto;
 import com.example.demo.dto.RfileDto;
+import com.example.demo.dto.UserDto;
 
 @Mapper
 public interface HomeDao {
@@ -19,5 +21,7 @@ public interface HomeDao {
 	RequestDto selectRequest(Integer num);
 	//파일 목록 가져오는 메소드 선언
 	List<RfileDto> selectFile(Integer num);
+	//의뢰 계약 작성
+	void insertReqContract(ReqContractDto rConDto);
 
 }
